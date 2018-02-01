@@ -14,7 +14,7 @@ sh autogen.sh
 echo "Installing Required libraries"
 sleep 5
 sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
-sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev -y
+sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libz-dev sqlite3-dev libpcre++-dev -y
 echo "Configuring the build"
 sleep 5
 ./configure --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
