@@ -16,17 +16,19 @@ sh autogen.sh
 echo "Installing Required libraries"
 sleep 5
 sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
-sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev libpython-dev python-pip -y
+sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev -y
 echo "Configuring the build"
 sleep 5
-./configure --disable-silent-rules --enable-python --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
+./configure --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
 echo "Compile the code"
 sleep 5
 make
-sudo make install
+#sudo make install
 mkdir examples/java/libs
-#cp bindings/java/.libs/libmegajava.so examples/java/libs/
-cp -a bindings/java/nz/mega/sdk examples/java/src/nz/mega/
+cp -v bindings/java/.libs/libmegajava.so examples/java/libs/
+sleep 5
+cp -av ../nz/mega/sdk examples/java/src/nz/mega/
+sleep 5
 cd examples/java
 mkdir bin
 javac -d bin -sourcepath src/ src/nz/mega/bindingsample/CrudExample.java
