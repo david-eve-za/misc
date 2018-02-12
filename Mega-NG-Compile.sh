@@ -14,10 +14,10 @@ sh autogen.sh
 echo "Installing Required libraries"
 sleep 5
 sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
-sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev -y
+sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev libpython-dev -y
 echo "Configuring the build"
 sleep 5
-./configure --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
+./configure --disable-silent-rules --enable-python --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
 echo "Compile the code"
 sleep 5
 make
