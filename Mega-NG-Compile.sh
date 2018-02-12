@@ -1,3 +1,5 @@
+git config --global user.email "david.eve.za@gmail.com"
+git config --global user.name "david-eve-za"
 echo "Updating and Upgrading the sistem"
 sleep 5
 sudo apt update && sudo apt upgrade -y
@@ -14,7 +16,7 @@ sh autogen.sh
 echo "Installing Required libraries"
 sleep 5
 sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
-sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev libpython-dev -y
+sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev libpython-dev python-pip -y
 echo "Configuring the build"
 sleep 5
 ./configure --disable-silent-rules --enable-python --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
