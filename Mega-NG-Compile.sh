@@ -23,13 +23,21 @@ sleep 5
 echo "Compile the code"
 sleep 5
 make
+cd ..
+cd ..
+git clone https://github.com/david-eve-za/MegaManager.git
+cd MegaManager
+mvn compile
+mvn assembly:single
 #sudo make install
-mkdir examples/java/libs
-cp -v bindings/java/.libs/libmegajava.so examples/java/libs/
+#mkdir examples/java/libs
+cp -v ../misc/sdk/bindings/java/.libs/libmegajava.so libs/
 sleep 5
-cp -av ../nz/mega/sdk examples/java/src/nz/mega/
-sleep 5
-cd examples/java
-mkdir bin
-javac -d bin -sourcepath src/ src/nz/mega/bindingsample/CrudExample.java
-java -cp bin nz.mega.bindingsample.CrudExample
+#cp -av ../nz/mega/sdk examples/java/src/nz/mega/
+#sleep 5
+#cd examples/java
+#mkdir bin
+#javac -d bin -sourcepath src/ src/nz/mega/bindingsample/CrudExample.java
+#java -cp bin nz.mega.bindingsample.CrudExample
+cd target
+java -jar MegaManager-1.0-SNAPSHOT-jar-with-dependencies.jar 
