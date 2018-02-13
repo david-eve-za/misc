@@ -41,3 +41,6 @@ sleep 5
 #java -cp bin nz.mega.bindingsample.CrudExample
 cd target
 java -jar MegaManager-1.0-SNAPSHOT-jar-with-dependencies.jar 
+sudo apt install locate
+sudo updatedb
+locate libmega
