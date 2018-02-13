@@ -1,0 +1,14 @@
+prefix=/
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+platform_include=mega/posix
+
+Name: libmega
+Description: Mega SDK
+Version: 3.3.0
+Requires:
+Conflicts:
+Libs: -L${libdir} -lmega
+Libs.private: 
+Cflags: -I${includedir} -I${includedir}/mega -I${includedir}/${platform_include}
