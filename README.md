@@ -1,7 +1,7 @@
 # misc
 
-http://www.mega-descargas.co/posts/series/51232/Stargate-SG1-Serie-Completa-Latino-HDRip-Mega.html
-
-http://www.mega-descargas.co/posts/series/51234/Stargate-Atlantis-Serie-Completa-Latino-DVDRip-MG.html
-
-http://www.mega-descargas.co/posts/peliculas/51238/Stargate-Universe-Serie-Completa-DVDRip-Mega.html
+mkdir chamilo
+cd chamilo
+wget https://github.com/chamilo/chamilo-lms/archive/v1.11.4.tar.gz
+tar zxf v1.11.4.tar.gz
+mv chamilo-lms-1.11.4 www
