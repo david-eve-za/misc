@@ -24,4 +24,6 @@ python setup.py install
 cd ..
 rm -vRf Pyrit
 
-#./crunch 8 8 123456 | pyrit -e "ESSID" -f -passthrourg | cowpatty -d - -r captura.cap - "ESSID"
+#$1-> ESSID
+#$2-> HandShake file .cap
+#crunch 8 8 -f /usr/share/crunch/charset.lst mixalpha-numeric-all | pyrit -e $1 -f -passthrourg | cowpatty -d - -r $2 - $1
