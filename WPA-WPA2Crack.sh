@@ -23,3 +23,5 @@ python setup.py build
 python setup.py install
 cd ..
 rm -vRf Pyrit
+
+#./crunch 8 8 123456 | pyrit -e "ESSID" -f -passthrourg | cowpatty -d - -r captura.cap - "ESSID"
