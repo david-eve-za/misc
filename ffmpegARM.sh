@@ -10,20 +10,22 @@ unzip android-ndk-r17b-linux-x86_64.zip
 rm -v android-ndk-r17b-linux-x86_64.zip
 #Set Variables
 NDK=$(pwd)/android-ndk-r17b
-echo $NDK
 SYSROOT=$NDK/platforms/android-16/arch-arm/
-echo $SYSROOT
 TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
-echo $TOOLCHAIN
 CPU=armv7-a
 PREFIX=$(pwd)/android/$CPU
-echo $PREFIX
 ADDI_CFLAGS="-march=armv7-a"
 #Cloning ffmpeg repo
 git clone git://source.ffmpeg.org/ffmpeg.git
 cd ffmpeg
 #Installing Essentials
 sudo apt-get install mercurial cmake cmake-curses-gui build-essential gcc-arm-linux-gnueabi g++-arm-linux-gnueabi -y
+git clone git://git.videolan.org/x264
+# Build x264
+cd x264
+./configure --host=arm-linux --cross-prefix=${CCPREFIX} --enable-static --disable-asm
+make -j8
+cd ..
 hg clone https://bitbucket.org/multicoreware/x265
 cd x265/build/arm-linux
 sh make-Makefiles.bash
