@@ -1,4 +1,7 @@
 #!/bin/bash
+#Create working directory
+mkdir ffmpeg-arm
+cd ffmpeg-arm
 #Download the Android NDK
 wget https://dl.google.com/android/repository/android-ndk-r17b-linux-x86_64.zip
 #Unzip file
