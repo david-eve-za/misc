@@ -10,8 +10,11 @@ unzip android-ndk-r17b-linux-x86_64.zip
 rm -v android-ndk-r17b-linux-x86_64.zip
 #Set Variables
 NDK=$(pwd)/android-ndk-r17b
+echo $NDK
 SYSROOT=$NDK/platforms/android-16/arch-arm/
+echo $SYSROOT
 TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64
+echo $TOOLCHAIN
 
 function build_one
 {
@@ -21,6 +24,7 @@ make
 make install
 }
 CPU=armv7-a
-PREFIX=$(pwd)/android/$CPU 
+PREFIX=$(pwd)/android/$CPU
+echo $PREFIX
 ADDI_CFLAGS="-march=armv7-a"
 #build_one
