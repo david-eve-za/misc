@@ -22,7 +22,7 @@ sudo apt -y install \
   zlib1g-dev \
   gcc-arm-linux-gnueabi \
   g++-arm-linux-gnueabi
-  
+sleep 5
 #Create working directory
 mkdir ffmpeg-arm
 cd ffmpeg-arm
