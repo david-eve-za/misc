@@ -23,7 +23,7 @@ sudo apt-get install mercurial cmake cmake-curses-gui build-essential gcc-arm-li
 git clone git://git.videolan.org/x264
 # Build x264
 cd x264
-./configure --host=arm-linux --cross-prefix=${CCPREFIX} --enable-static --disable-asm
+./configure --host=arm-linux --cross-prefix=${PREFIX} --enable-static --disable-asm
 make -j8
 cd ..
 hg clone https://bitbucket.org/multicoreware/x265
