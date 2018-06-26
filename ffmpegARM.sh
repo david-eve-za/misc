@@ -1,4 +1,28 @@
 #!/bin/bash
+sudo apt update -qq 
+sudo apt -y install \
+  autoconf \
+  automake \
+  build-essential \
+  cmake \
+  git-core \
+  libass-dev \
+  libfreetype6-dev \
+  libsdl2-dev \
+  libtool \
+  libva-dev \
+  libvdpau-dev \
+  libvorbis-dev \
+  libxcb1-dev \
+  libxcb-shm0-dev \
+  libxcb-xfixes0-dev \
+  pkg-config \
+  texinfo \
+  wget \
+  zlib1g-dev \
+  gcc-arm-linux-gnueabi \
+  g++-arm-linux-gnueabi
+  
 #Create working directory
 mkdir ffmpeg-arm
 cd ffmpeg-arm
@@ -18,8 +42,6 @@ ADDI_CFLAGS="-march=armv7-a"
 #Cloning ffmpeg repo
 git clone git://source.ffmpeg.org/ffmpeg.git
 cd ffmpeg
-#Installing Essentials
-sudo apt-get install mercurial cmake cmake-curses-gui build-essential gcc-arm-linux-gnueabi g++-arm-linux-gnueabi -y
 git clone git://git.videolan.org/x264
 # Build x264
 cd x264
