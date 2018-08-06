@@ -6,6 +6,10 @@ sudo apt update && sudo apt upgrade -y
 echo "Installing build-essential autoconf libtool"
 sleep 5
 sudo apt install build-essential autoconf libtool -y
+echo "Installing Required libraries"
+sleep 5
+sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
+sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev -y
 echo "Clonning https://github.com/meganz/sdk"
 sleep 5
 git clone https://github.com/meganz/sdk
@@ -13,10 +17,6 @@ echo "Accesing and preparing the compilation of code"
 sleep 5
 cd sdk
 sh autogen.sh
-echo "Installing Required libraries"
-sleep 5
-sudo apt install swig libcrypto++-dev libsodium-dev zlib1g-dev libsqlite3-dev libssl-dev libc-ares-dev -y
-sudo apt install libcurl4-openssl-dev libfreeimage-dev libreadline-dev libpcre++-dev -y
 echo "Configuring the build"
 sleep 5
 ./configure --enable-java --with-java-include-dir=/usr/lib/jvm/java-8-openjdk-amd64/include
