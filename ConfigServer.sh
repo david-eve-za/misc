@@ -27,5 +27,11 @@ rm jdk-8u181-linux-x64.tar.gz
 cd /opt/jdk1.8.0_181/
 alternatives --install /usr/bin/java java /opt/jdk1.8.0_181/bin/java 2
 alternatives --config java
-#Install Oracle 12c
-wget https://download.oracle.com/otn/linux/oracle12c/122010/linuxx64_12201_database.zip
+#Install derby database
+wget http://apache.mirrors.pair.com//db/derby/db-derby-10.14.2.0/db-derby-10.14.2.0-bin.tar.gz
+mkdir /opt/Apache
+cp db-derby-10.14.2.0-bin.tar.gz /opt/Apache
+cd /opt/Apache
+tar xzvf db-derby-10.14.2.0-bin.tar.gz
+rm db-derby-10.14.2.0-bin.tar.gz
+export DERBY_INSTALL=/opt/Apache/db-derby-10.14.2.0-bin
