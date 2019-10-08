@@ -1,5 +1,17 @@
-git config --global user.email "david.eve.za@gmail.com"
-git config --global user.name "david-eve-za"
+
+#!/bin/bash -i
+set -e
+
+LOG_FILE=/dev/null
+
+#git config --global user.email "david.eve.za@gmail.com"
+#git config --global user.name "david-eve-za"
+function createMEGABindings
+{
+    echo "* Creating MEGA Java bindings"
+    mkdir -p examples/java/src/nz/mega/sdk
+    swig -c++ -Iinclude -java -package nz.mega.sdk -outdir examples/java/src/nz/mega/sdk -o bindings/megasdk.cpp -DHAVE_LIBUV -DENABLE_CHAT bindings/megaapi.i &>> ${LOG_FILE}
+}
 echo "Updating and Upgrading the sistem"
 sleep 5
 sudo apt update && sudo apt upgrade -y
@@ -16,6 +28,8 @@ git clone https://github.com/meganz/sdk
 echo "Accesing and preparing the compilation of code"
 sleep 5
 cd sdk
+createMEGABindings
+pause
 sh autogen.sh
 echo "Configuring the build"
 sleep 5
